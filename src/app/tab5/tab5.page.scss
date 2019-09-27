@@ -1,0 +1,29 @@
+
+.custon-nav{
+    height: 48px;
+    width: 20px;
+    cursor: pointer;
+ 
+    vertical-align: middle;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.prev-icon-custom{
+}
+.prev-icon-custom.disabled{
+    opacity: 0.4;
+    cursor: default;
+}
+.next-icon-custom{
+}
+.next-icon-custom.disabled{
+    opacity: 0.4;
+    cursor: default;
+}
+.slider-nav{
+    ion-icon{
+        height: 100%;
+    }
+}
+ 

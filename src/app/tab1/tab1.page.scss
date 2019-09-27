@@ -1,0 +1,28 @@
+.welcome-card img {
+  overflow: hidden;
+}
+.green {
+  background-color: green; }
+
+.yellow {
+  background-color: orange; }
+
+.red {
+  background-color: red; }
+
+
+  .item .item-content .red {
+    background-color: red !important;
+  }
+
+  .opacity{
+    opacity: 0.5;
+  }
+
+  ion-grid {
+    height: 80%;
+  }
+    ion-row {
+      height: 33.33%;
+      color:white;
+    }
