@@ -1,9 +1,67 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>
-      Tab Two
-    </ion-title>
+    <ion-title >
+        <div padding="true" class="manual-ios-statusbar-padding">
+            <img src="../../assets/images/BRDQuEoTxWoQhZeiSZn8_soslogo.png" style="display: block; width: 15%; height: auto; margin-left: auto; margin-right: auto;">
+          
+      </div> </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+    
+      <ion-card class="welcome-card">
+        <ion-card-header>
+    
+          
+          <h4 id="donate-heading4" style="color:#0E3F85;text-align:center;">How to Donate?</h4>
+          <div id="donate-markdown20" class="show-list-numbers-and-dots">
+            <p style="color:#0E3F85;">Any donation you make, regardless of the amount, is welcomed and valued by Suicide or Survive. </p>
+      
+            <p style="color:#0E3F85;">All donations go directly towards supporting SOS in our mission to challenge the stigma attached to mental health and suicide and allow us to continue to deliver our much-needed workshops and programmes throughout Ireland. </p>
+      
+            <p style="color:#0E3F85;">You can make a donation in a number of simple ways:</p>
+          <ion-list id="donate-list3">
+          
+            <label class="item item-input" id="donate-input1">
+              <ion-input [(ngModel)]="amount" placeholder="Enter the amount you want to donate (e.g 15.00)"></ion-input>
+            </label>
+          </ion-list>
+            </div>
+          <ion-row>
+            <ion-col>
+              Total Payment
+            </ion-col>
+            <ion-col>
+              {{currencyIcon}}
+              {{amount}}
+            </ion-col>
+          </ion-row>
+        </ion-card-header>
+        <ion-card-content>
+          <img src="../../assets/images/paypal2.PNG" style="width : 100% ; height : 100%" (click)="payWithPaypal()" >
+         <div style="margin-top:15px">
+          <h4 id="donate-heading5" style="color:#0E3F85;">By text:</h4>
+          <div id="donate-markdown22" class="show-list-numbers-and-dots">
+            <p style="color:#0E3F85;">€2 Text SOS2 to 50300: Text costs €2. Suicide or Survive will receive a minimum of €1.80.</p>
+          </div>
+          <div id="donate-markdown23" class="show-list-numbers-and-dots">
+            <p style="color:#0E3F85;">€4 Text SOS4 to 50300: Text costs €4. Suicide or Survive will receive a minimum of €3.60.</p>
+          </div>
+          <div id="donate-markdown24" class="show-list-numbers-and-dots">
+            <p style="color:#0E3F85;">€6 Text SOS6 to 50300: Text costs €6. Suicide or Survive will receive a minimum of €5.40.</p>
+          </div>
+          <div id="donate-markdown25" class="show-list-numbers-and-dots">
+            <p style="color:#0E3F85;">This service is provided by LIKECHARITY.</p>
+      
+            <p style="color:#0E3F85;">If you have any queries with texting to donate, please contact 076 6805278.</p>
+       </div></div>
+        </ion-card-content>
+      
+      </ion-card>
+      <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+          <ion-fab-button (click)="callNow('116123')">
+            <ion-icon name="call"></ion-icon>
+          </ion-fab-button>
+        </ion-fab>
+</ion-content>

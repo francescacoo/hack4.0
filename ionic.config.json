@@ -1,5 +1,7 @@
 {
   "name": "SOS",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

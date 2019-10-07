@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title >
+        <div padding="true" class="manual-ios-statusbar-padding">
+            <img src="../../assets/images/BRDQuEoTxWoQhZeiSZn8_soslogo.png" style="display: block; width: 15%; height: auto; margin-left: auto; margin-right: auto;">
+                </div> </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+
+      <ion-slides [options]="slideOptsOne" #slideWithNav  (ionSlideDidChange)="SlideDidChange(sliderOne,slideWithNav)">
+          <ion-slide *ngFor="let s of sliderOne.slidesItems" >
+<ion-card>
+                 
+                  <ion-card-content>
+                      <ion-img [src]="s.image"></ion-img>
+                    </ion-card-content>
+               
+              </ion-card>
+
+           </ion-slide>
+       </ion-slides>
+
+       <ion-footer>
+
+       <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+          <ion-fab-button (click)="callNow('116123')">
+            <ion-icon name="call"></ion-icon>
+          </ion-fab-button>
+        </ion-fab>
+        </ion-footer>
