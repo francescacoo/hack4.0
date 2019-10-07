@@ -15,6 +15,9 @@ import { NativeAudio } from '@ionic-native/native-audio/ngx';
 import { Media, MediaObject } from '@ionic-native/media/ngx';
 import { CallNumber } from '@ionic-native/call-number/ngx';
 
+import { SQLite } from '@ionic-native/sqlite/ngx';
+
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -24,6 +27,7 @@ import { CallNumber } from '@ionic-native/call-number/ngx';
     PayPal,Media,
     NativeAudio ,
     CallNumber,
+    SQLite,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],

@@ -1,6 +1,9 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { CallNumber } from '@ionic-native/call-number/ngx';
 import { Chart } from 'chart.js';
+import { SQLite, SQLiteObject } from '@ionic-native/sqlite/ngx';
+import { Platform } from '@ionic/angular';
+
 
 var event=""
 @Component({
@@ -13,6 +16,10 @@ var event=""
 export class Tab1Page {
   @ViewChild('barChart', {static: false}) barChart;
 
+  databaseObj: SQLiteObject; // Database instance object
+  readonly database_name:string = 'SOS.db'; // DB name
+  readonly table_name:string = "moodlog"; // Table name
+  
   event: any;
   public dataToStore;
   list: any;
@@ -22,9 +29,42 @@ export class Tab1Page {
   lineChart: Chart;
   lineCanvas: any;
   constructor(
-    private callNumber: CallNumber
+    private callNumber: CallNumber,
+    private platform: Platform,
+    private sqlite: SQLite
   ) {
+    this.platform.ready().then(() => {
+      this.createDB();
+    }).catch(error => {
+      console.log(error);
+    });
+  }
 
+  createDB() {
+    this.sqlite.create({
+      name: this.database_name,
+      location: 'default'
+    })
+      .then((db: SQLiteObject) => {
+        this.databaseObj = db;
+   //     alert('Database' + this.database_name + ' Created!');
+   this.createTable();
+      })
+      .catch(e => {
+        alert('error ' + JSON.stringify(e));
+      });
+
+  }
+
+  createTable() {
+    // tslint:disable-next-line:max-line-length
+    this.databaseObj.executeSql('CREATE TABLE IF NOT EXISTS ' + this.table_name + ' (pid INTEGER PRIMARY KEY, puffn INTEGER, created_at DEFAULT CURRENT_TIMESTAMP)', [])
+      .then(() => {
+    //    alert('Table Created!');
+      })
+      .catch(e => {
+        alert('error ' + JSON.stringify(e));
+      });
   }
 
   callNow(number) {
